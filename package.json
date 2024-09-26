@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "test": "cypress run --env TAGS='@positiva or @negativa'",
+    "report:merge": "mochawesome-merge cypress/reports/*.json > cypress/reports/report.json",
+    "report:generate": "marge cypress/reports/report.json --reportDir cypress/reports --inline",
+    "test:ci": "npm run cypress:run && npm run report:merge && npm run report:generate"
+  },
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^20.1.2",
+    "cypress": "^13.15.0",
+    "eslint-plugin-react": "^7.36.1",
+    "globals": "^15.9.0"
+  }
+}
